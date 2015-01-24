@@ -36,7 +36,6 @@ public class RetainedFragmentActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        setTitle("Fake API call");
         setContentView(R.layout.retained_fragment_activity);
     }
 

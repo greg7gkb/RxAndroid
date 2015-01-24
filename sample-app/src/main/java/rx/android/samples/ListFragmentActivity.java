@@ -33,7 +33,6 @@ public class ListFragmentActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Lists");
         setContentView(R.layout.list_fragment_activity);
     }
 

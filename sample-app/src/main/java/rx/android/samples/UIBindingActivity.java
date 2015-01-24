@@ -34,7 +34,6 @@ public class UIBindingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        setTitle("UIBinding");
         setContentView(R.layout.ui_binding_activity);
     }
 
