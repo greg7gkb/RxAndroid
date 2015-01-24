@@ -43,6 +43,11 @@ public class ListFragmentActivity extends Activity {
 
         public RetainedListFragment() {
             setRetainInstance(true);
+
+            AppObservable.bindFragment(this, SampleObservables.numberStrings(1, 500, 100))
+                    .observeOn(mainThread())
+                    .lift(new BindAdapter())
+                    .subscribe();
         }
 
         @Override
@@ -52,11 +57,6 @@ public class ListFragmentActivity extends Activity {
             adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
             ListView listView = (ListView) view.findViewById(android.R.id.list);
             listView.setAdapter(adapter);
-
-            AppObservable.bindFragment(this, SampleObservables.numberStrings(1, 500, 100))
-                .observeOn(mainThread())
-                .lift(new BindAdapter())
-                .subscribe();
 
             final ProgressBar progressBar = (ProgressBar) view.findViewById(android.R.id.progress);
             AppObservable.bindFragment(this, WidgetObservable.listScrollEvents(listView))
